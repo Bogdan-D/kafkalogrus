@@ -21,6 +21,10 @@ type KafkaLogrusHook struct {
 	producer       sarama.AsyncProducer
 }
 
+func (k *KafkaLogrusHook) SetHostname(hostname string) {
+	k.hostname = hostname
+}
+
 // Create a new KafkaHook
 func NewKafkaLogrusHook(id string,
 	levels []logrus.Level,
